@@ -1,25 +1,33 @@
 ﻿void Main()
 {
-    DisplayLogo();
-    ShowOptions();
-    string choice = CatchInput();
-
-    switch (choice)
+    while (true)
     {
-        case "1": RegisterNewBand();
-            break;
+        DisplayLogo();
+        ShowOptions();
+        string choice = CatchInput();
 
-        case "2": ShowRegisteredBands();
-            break;
+        switch (choice)
+        {
+            case "1":
+                RegisterNewBand();
+                break;
 
-        case "3": RateBand();
-            break;
+            case "2":
+                ShowRegisteredBands();
+                break;
 
-        case "4": ShowBandAverage();
-            break;
+            case "3":
+                RateBand();
+                break;
 
-        default: Console.WriteLine("\nBye bye :)\n");
-            break;
+            case "4":
+                ShowBandAverage();
+                break;
+
+            default:
+                Console.WriteLine("\nBye bye :)\n");
+                break;
+        }
     }
 }
 
