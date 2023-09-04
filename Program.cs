@@ -18,7 +18,7 @@
         case "4": // todo
             break;
 
-        default: // todo
+        default: Console.WriteLine("\nBye bye :)\n");
             break;
     }
 }
@@ -46,7 +46,7 @@ Type anything to close
             ");
 }
 
-string CatchInput() 
+string CatchInput()
 {
     Console.Write("Insert: ");
     string input = Console.ReadLine()!;
