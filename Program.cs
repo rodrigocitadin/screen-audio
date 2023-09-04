@@ -73,7 +73,7 @@ void RegisterNewBand()
     string input = CatchInput();
 
     Console.WriteLine("Registered band!");
-    Thread.Sleep(2500);
+    Thread.Sleep(1500);
     Console.Clear();
 }
 
