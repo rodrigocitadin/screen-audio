@@ -46,7 +46,8 @@ Type anything to close
             ");
 }
 
-string CatchInput() {
+string CatchInput() 
+{
     Console.Write("Insert: ");
     string input = Console.ReadLine()!;
 
