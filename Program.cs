@@ -3,6 +3,24 @@
     DisplayLogo();
     ShowOptions();
     string choice = CatchInput();
+
+    switch (choice)
+    {
+        case "1": // todo
+            break;
+
+        case "2": // todo
+            break;
+
+        case "3": // todo
+            break;
+
+        case "4": // todo
+            break;
+
+        default: // todo
+            break;
+    }
 }
 
 void DisplayLogo()
