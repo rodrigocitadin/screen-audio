@@ -1,6 +1,8 @@
 ﻿void Main()
 {
-    while (true)
+    bool loop = true;
+
+    while (loop)
     {
         DisplayLogo();
         ShowOptions();
@@ -26,6 +28,7 @@
 
             default:
                 Console.WriteLine("\nBye bye :)\n");
+                loop = false;
                 break;
         }
     }
