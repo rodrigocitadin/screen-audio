@@ -14,4 +14,16 @@ void DisplayLogo()
     ");
 }
 
+void ShowOptions() {
+    // todo
+}
+
+void RegisterNewBand() {
+    // todo
+}
+
+void ShowRegistredBands() {
+    // todo
+}
+
 Main();
