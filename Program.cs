@@ -27,6 +27,7 @@
                 break;
 
             default:
+                Console.Clear();
                 Console.WriteLine("\nBye bye :)\n");
                 loop = false;
                 break;
