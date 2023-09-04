@@ -6,16 +6,16 @@
 
     switch (choice)
     {
-        case "1": // todo
+        case "1": RegisterNewBand();
             break;
 
-        case "2": // todo
+        case "2": ShowRegisteredBands();
             break;
 
-        case "3": // todo
+        case "3": RateBand();
             break;
 
-        case "4": // todo
+        case "4": ShowBandAverage();
             break;
 
         default: Console.WriteLine("\nBye bye :)\n");
@@ -59,7 +59,17 @@ void RegisterNewBand()
     // todo
 }
 
-void ShowRegistredBands()
+void ShowRegisteredBands()
+{
+    // todo
+}
+
+void RateBand()
+{
+    // todo
+}
+
+void ShowBandAverage()
 {
     // todo
 }
