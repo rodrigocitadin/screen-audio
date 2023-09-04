@@ -56,7 +56,14 @@ string CatchInput()
 
 void RegisterNewBand()
 {
-    // todo
+    Console.Clear();
+    Console.WriteLine("What is the band name?");
+
+    string input = CatchInput();
+
+    Console.WriteLine("Registered band!");
+    Thread.Sleep(2500);
+    Console.Clear();
 }
 
 void ShowRegisteredBands()
