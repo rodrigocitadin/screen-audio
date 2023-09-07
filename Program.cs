@@ -83,7 +83,13 @@ void RegisterNewBand()
 
 void ShowRegisteredBands()
 {
-    // todo
+    Console.Clear();
+    Console.WriteLine("These are the bands you registered:\n");
+
+    for (int i = 0; i < bandsList.Count; i++)
+    {
+        Console.WriteLine($"{i + 1}: {bandsList[i]}");
+    }
 }
 
 void RateBand()
