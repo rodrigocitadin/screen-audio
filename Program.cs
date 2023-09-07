@@ -90,6 +90,10 @@ void ShowRegisteredBands()
     {
         Console.WriteLine($"{i + 1}: {bandsList[i]}");
     }
+
+    Console.WriteLine("\nPress any key to return to the menu");
+    Console.ReadLine();
+    Console.Clear();
 }
 
 void RateBand()
