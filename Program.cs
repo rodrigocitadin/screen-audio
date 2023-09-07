@@ -92,7 +92,7 @@ void ShowRegisteredBands()
     }
 
     Console.WriteLine("\nPress any key to return to the menu");
-    Console.ReadLine();
+    Console.ReadKey();
     Console.Clear();
 }
 
