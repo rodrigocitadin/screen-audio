@@ -1,4 +1,6 @@
-﻿void Main()
+﻿List<string> bandsList = new List<string>();
+
+void Main()
 {
     bool loop = true;
 
@@ -71,7 +73,8 @@ void RegisterNewBand()
     Console.Clear();
     Console.WriteLine("What is the band name?");
 
-    string input = CatchInput();
+    string band = CatchInput();
+    bandsList.Add(band);
 
     Console.WriteLine("Registered band!");
     Thread.Sleep(1500);
