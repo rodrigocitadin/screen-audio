@@ -130,7 +130,16 @@ void RateBand()
 
 void ShowBandAverage()
 {
-    // todo
+    ShowTitle("Average band rating");
+
+    for (int i = 0; i < bandsArray.Length; i++)
+    {
+        string average = String.Format("0:0.00", bands[bandsArray[i]].Average());
+        Console.WriteLine($"{i + 1}: {bandsArray[i]} has an average of {average}");
+    }
+
+    Console.WriteLine("\nPress any key to return to the menu");
+    Console.ReadKey();
 }
 
 void ShowTitle(string title)
