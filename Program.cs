@@ -74,7 +74,7 @@ void RegisterNewBand()
     ShowTitle("What is the band name?");
 
     string band = CatchInput();
-    bandsList.Add(band);
+    bands.Add(band, new List<int>());
 
     Console.WriteLine("Registered band!");
     Thread.Sleep(1000);
@@ -85,9 +85,11 @@ void ShowRegisteredBands()
 {
     ShowTitle("These are the bands you registered");
 
-    for (int i = 0; i < bandsList.Count; i++)
+    string[] bandsArray = bands.Keys.ToArray();
+
+    for (int i = 0; i < bandsArray.Length; i++)
     {
-        Console.WriteLine($"{i + 1}: {bandsList[i]}");
+        Console.WriteLine($"{ i + 1 }: { bandsArray[i] }");
     }
 
     Console.WriteLine("\nPress any key to return to the menu");
