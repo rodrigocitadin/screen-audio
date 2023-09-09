@@ -1,4 +1,5 @@
-﻿List<string> bandsList = new List<string>();
+﻿// List<string> bandsList = new List<string>();
+Dictionary<string, List<int>> bands = new Dictionary<string, List<int>>();
 
 void Main()
 {
