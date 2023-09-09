@@ -1,5 +1,4 @@
-﻿// List<string> bandsList = new List<string>();
-Dictionary<string, List<int>> bands = new Dictionary<string, List<int>>();
+﻿Dictionary<string, List<int>> bands = new Dictionary<string, List<int>>();
 
 void Main()
 {
@@ -89,7 +88,7 @@ void ShowRegisteredBands()
 
     for (int i = 0; i < bandsArray.Length; i++)
     {
-        Console.WriteLine($"{ i + 1 }: { bandsArray[i] }");
+        Console.WriteLine($"{i + 1}: {bandsArray[i]}");
     }
 
     Console.WriteLine("\nPress any key to return to the menu");
@@ -104,7 +103,7 @@ void RateBand()
 
     for (int i = 0; i < bandsArray.Length; i++)
     {
-        Console.WriteLine($"{ i + 1 }: { bandsArray[i] }");
+        Console.WriteLine($"{i + 1}: {bandsArray[i]}");
     }
 
     Console.Write("\nChoose a band number to rate: ");
