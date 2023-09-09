@@ -40,6 +40,7 @@ void Main()
 
 void DisplayLogo()
 {
+    Console.Clear();
     Console.WriteLine(@"
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗  ░█████╗░██╗░░░██╗██████╗░██╗░█████╗░
 ██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝████╗░██║  ██╔══██╗██║░░░██║██╔══██╗██║██╔══██╗
@@ -78,7 +79,6 @@ void RegisterNewBand()
 
     Console.WriteLine("Registered band!");
     Thread.Sleep(1000);
-    Console.Clear();
 }
 
 void ShowRegisteredBands()
@@ -94,7 +94,6 @@ void ShowRegisteredBands()
 
     Console.WriteLine("\nPress any key to return to the menu");
     Console.ReadKey();
-    Console.Clear();
 }
 
 void RateBand()
@@ -125,14 +124,12 @@ void RateBand()
             bands[bandsArray[bandNumber - 1]].Add(rateNumber);
             Console.WriteLine("The note was added successfully");
             Thread.Sleep(1500);
-            Console.Clear();
         }
         else
         {
             Console.WriteLine("\nPlease insert a number");
             Console.WriteLine("\nPress any key to return to the menu");
             Console.ReadKey();
-            Console.Clear();
         }
     }
     else
@@ -140,7 +137,6 @@ void RateBand()
         Console.WriteLine("\nBand not found!");
         Console.WriteLine("\nPress any key to return to the menu");
         Console.ReadKey();
-        Console.Clear();
     }
 }
 
