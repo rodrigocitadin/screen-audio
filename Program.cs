@@ -109,7 +109,7 @@ void ShowBandAverage()
 
 void ShowTitle(string title)
 {
-    string asterisks = string.Empty.PadLeft(title.Length);
+    string asterisks = string.Empty.PadLeft(title.Length, '*');
 
     Console.Clear();
     Console.WriteLine(asterisks);
