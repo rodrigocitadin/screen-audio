@@ -70,21 +70,19 @@ string CatchInput()
 
 void RegisterNewBand()
 {
-    Console.Clear();
-    Console.WriteLine("What is the band name?");
+    ShowTitle("What is the band name?");
 
     string band = CatchInput();
     bandsList.Add(band);
 
     Console.WriteLine("Registered band!");
-    Thread.Sleep(1500);
+    Thread.Sleep(1000);
     Console.Clear();
 }
 
 void ShowRegisteredBands()
 {
-    Console.Clear();
-    Console.WriteLine("These are the bands you registered:\n");
+    ShowTitle("These are the bands you registered");
 
     for (int i = 0; i < bandsList.Count; i++)
     {
@@ -114,6 +112,7 @@ void ShowTitle(string title)
     Console.WriteLine(asterisks);
     Console.WriteLine(title);
     Console.WriteLine(asterisks);
+    Console.WriteLine();
 }
 
 Main();
