@@ -1,4 +1,5 @@
 ﻿Dictionary<string, List<int>> bands = new Dictionary<string, List<int>>();
+string[] bandsArray = bands.Keys.ToArray();
 
 void Main()
 {
@@ -83,13 +84,7 @@ void RegisterNewBand()
 void ShowRegisteredBands()
 {
     ShowTitle("These are the bands you registered");
-
-    string[] bandsArray = bands.Keys.ToArray();
-
-    for (int i = 0; i < bandsArray.Length; i++)
-    {
-        Console.WriteLine($"{i + 1}: {bandsArray[i]}");
-    }
+    ListBands();
 
     Console.WriteLine("\nPress any key to return to the menu");
     Console.ReadKey();
@@ -98,13 +93,7 @@ void ShowRegisteredBands()
 void RateBand()
 {
     ShowTitle("Rating a band");
-
-    string[] bandsArray = bands.Keys.ToArray();
-
-    for (int i = 0; i < bandsArray.Length; i++)
-    {
-        Console.WriteLine($"{i + 1}: {bandsArray[i]}");
-    }
+    ListBands();
 
     Console.Write("\nChoose a band number to rate: ");
     string band = Console.ReadLine()!;
@@ -153,6 +142,14 @@ void ShowTitle(string title)
     Console.WriteLine(title);
     Console.WriteLine(asterisks);
     Console.WriteLine();
+}
+
+void ListBands()
+{
+    for (int i = 0; i < bandsArray.Length; i++)
+    {
+        Console.WriteLine($"{i + 1}: {bandsArray[i]}");
+    }
 }
 
 Main();
