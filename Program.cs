@@ -99,7 +99,49 @@ void ShowRegisteredBands()
 
 void RateBand()
 {
-    // todo
+    ShowTitle("Rating a band");
+
+    string[] bandsArray = bands.Keys.ToArray();
+
+    for (int i = 0; i < bandsArray.Length; i++)
+    {
+        Console.WriteLine($"{ i + 1 }: { bandsArray[i] }");
+    }
+
+    Console.Write("\nChoose a band number to rate: ");
+    string band = Console.ReadLine()!;
+
+    int bandNumber;
+
+    if (int.TryParse(band, out bandNumber) && bandNumber <= bandsArray.Length)
+    {
+        ShowTitle("Rating a band");
+        Console.Write($"What rating would you like to give the {bandsArray[bandNumber - 1]} band? ");
+        string rate = Console.ReadLine()!;
+        int rateNumber;
+
+        if (int.TryParse(rate, out rateNumber))
+        {
+            bands[bandsArray[bandNumber - 1]].Add(rateNumber);
+            Console.WriteLine("The note was added successfully");
+            Thread.Sleep(1500);
+            Console.Clear();
+        }
+        else
+        {
+            Console.WriteLine("\nPlease insert a number");
+            Console.WriteLine("\nPress any key to return to the menu");
+            Console.ReadKey();
+            Console.Clear();
+        }
+    }
+    else
+    {
+        Console.WriteLine("\nBand not found!");
+        Console.WriteLine("\nPress any key to return to the menu");
+        Console.ReadKey();
+        Console.Clear();
+    }
 }
 
 void ShowBandAverage()
