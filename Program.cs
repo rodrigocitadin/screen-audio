@@ -1,5 +1,5 @@
 ﻿Dictionary<string, List<int>> bands = new Dictionary<string, List<int>>();
-string[] bandsArray = bands.Keys.ToArray();
+string[] bandsArray;
 
 void Main()
 {
@@ -7,6 +7,8 @@ void Main()
 
     while (loop)
     {
+        bandsArray = bands.Keys.ToArray();
+
         DisplayLogo();
         ShowOptions();
         string choice = CatchInput();
@@ -134,7 +136,13 @@ void ShowBandAverage()
 
     for (int i = 0; i < bandsArray.Length; i++)
     {
-        string average = String.Format("0:0.00", bands[bandsArray[i]].Average());
+        if (bands[bandsArray[i]].Count == 0)
+        {
+            Console.WriteLine($"{i + 1}: {bandsArray[i]} is unrated");
+            continue;
+        }
+
+        string average = String.Format("{0:0.00}", bands[bandsArray[i]].Average());
         Console.WriteLine($"{i + 1}: {bandsArray[i]} has an average of {average}");
     }
 
