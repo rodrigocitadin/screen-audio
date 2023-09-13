@@ -1,9 +1,9 @@
 class Album
 {
-    public Album(string name, List<Music> musics)
+    public Album(string name)
     {
        Name = name;
-       Musics = musics;
+       Musics = new();
     } 
 
     public string Name { get; }
