@@ -1,6 +1,6 @@
 ﻿using ScreenSound.Models;
 
-Dictionary<string, List<int>> bands = new Dictionary<string, List<int>>();
+Dictionary<string, Band> bands = new();
 string[] bandsArray;
 
 void Main()
@@ -61,7 +61,7 @@ void ShowOptions()
 Enter 1 to register a new band
 Enter 2 to show all registered bands
 Enter 3 to rate a band
-Enter 4 to show the average of a band
+Enter 4 to show the average all bands
 Type anything to close
             ");
 }
@@ -78,16 +78,17 @@ void RegisterNewBand()
 {
     ShowTitle("What is the band name?");
 
-    string band = CatchInput();
-    bands.Add(band, new List<int>());
+    string bandName = CatchInput();
+    bands.Add(bandName, new(bandName));
 
-    Console.WriteLine("Registered band!");
+    Console.WriteLine("Band successfully registered!");
     Thread.Sleep(1000);
 }
 
 void ShowRegisteredBands()
 {
     ShowTitle("These are the bands you registered");
+
     ListBands();
 
     Console.WriteLine("\nPress any key to return to the menu");
@@ -100,36 +101,45 @@ void RateBand()
     ListBands();
 
     Console.Write("\nChoose a band number to rate: ");
-    string band = Console.ReadLine()!;
-
+    string input = Console.ReadLine()!;
     int bandNumber;
 
-    if (int.TryParse(band, out bandNumber) && bandNumber <= bandsArray.Length)
-    {
-        ShowTitle("Rating a band");
-        Console.Write($"What rating would you like to give the {bandsArray[bandNumber - 1]} band? ");
-        string rate = Console.ReadLine()!;
-        int rateNumber;
-
-        if (int.TryParse(rate, out rateNumber))
-        {
-            bands[bandsArray[bandNumber - 1]].Add(rateNumber);
-            Console.WriteLine("The note was added successfully");
-            Thread.Sleep(1500);
-        }
-        else
-        {
-            Console.WriteLine("\nPlease insert a number");
-            Console.WriteLine("\nPress any key to return to the menu");
-            Console.ReadKey();
-        }
-    }
-    else
+    if (!(int.TryParse(input, out bandNumber) && bandNumber <= bandsArray.Length))
     {
         Console.WriteLine("\nBand not found!");
         Console.WriteLine("\nPress any key to return to the menu");
         Console.ReadKey();
+        
+        return;
     }
+
+    ShowTitle("Rating a band");
+    Console.Write($"What rating would you like to give the {bandsArray[bandNumber - 1]} band? ");
+    string rating = Console.ReadLine()!;
+    int ratingNumber;
+
+    if (!(int.TryParse(rating, out ratingNumber)))
+    {
+        Console.WriteLine("\nInvalid input");
+        Console.WriteLine("\nPress any key to return to the menu");
+        Console.ReadKey();
+
+        return;
+    }
+
+    bool success = bands[bandsArray[bandNumber - 1]].AddRating(ratingNumber);
+
+    if(!success)
+    {
+        Console.WriteLine("\nThe rating must be in the range of 0 to 10");
+        Console.WriteLine("\nPress any key to return to the menu");
+        Console.ReadKey();
+
+        return;
+    } 
+
+    Console.WriteLine("The note was added successfully");
+    Thread.Sleep(1500);
 }
 
 void ShowBandAverage()
@@ -138,13 +148,14 @@ void ShowBandAverage()
 
     for (int i = 0; i < bandsArray.Length; i++)
     {
-        if (bands[bandsArray[i]].Count == 0)
+        if (bands[bandsArray[i]].Rating.Count == 0)
         {
             Console.WriteLine($"{i + 1}: {bandsArray[i]} is unrated");
             continue;
         }
 
-        string average = String.Format("{0:0.00}", bands[bandsArray[i]].Average());
+        string average = String.Format("{0:0.00}", bands[bandsArray[i]].Average);
+
         Console.WriteLine($"{i + 1}: {bandsArray[i]} has an average of {average}");
     }
 
