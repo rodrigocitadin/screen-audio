@@ -1,3 +1,5 @@
+namespace ScreenSound.Models;
+
 class Album
 {
     public Album(string name)
