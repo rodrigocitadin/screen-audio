@@ -1,4 +1,6 @@
-﻿Dictionary<string, List<int>> bands = new Dictionary<string, List<int>>();
+﻿using ScreenSound.Models;
+
+Dictionary<string, List<int>> bands = new Dictionary<string, List<int>>();
 string[] bandsArray;
 
 void Main()
