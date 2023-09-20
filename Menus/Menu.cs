@@ -12,4 +12,12 @@ internal class Menu
         Console.WriteLine(asterisks);
         Console.WriteLine();
     }
+
+    public string CatchInput(string text)
+    {
+        Console.Write(text);
+        string input = Console.ReadLine()!;
+
+        return input;
+    }
 }
