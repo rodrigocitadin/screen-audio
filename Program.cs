@@ -1,4 +1,5 @@
-﻿using ScreenSound.Models;
+﻿using ScreenSound.Menus;
+using ScreenSound.Models;
 
 Dictionary<string, Band> bands = new();
 string[] bandsArray;
@@ -18,7 +19,8 @@ void Main()
         switch (choice)
         {
             case "1":
-                RegisterNewBand();
+                MenuRegisterBand register = new();
+                register.Execute(bands);
                 break;
 
             case "2":
@@ -72,17 +74,6 @@ string CatchInput()
     string input = Console.ReadLine()!;
 
     return input;
-}
-
-void RegisterNewBand()
-{
-    ShowTitle("What is the band name?");
-
-    string bandName = CatchInput();
-    bands.Add(bandName, new(bandName));
-
-    Console.WriteLine("Band successfully registered!");
-    Thread.Sleep(1000);
 }
 
 void ShowRegisteredBands()
