@@ -34,7 +34,8 @@ void Main()
                 break;
 
             case "4":
-                ShowBandAverage();
+                MenuBandAverage average = new();
+                average.Execute(bands);
                 break;
 
             default:
@@ -76,38 +77,6 @@ string CatchInput()
     string input = Console.ReadLine()!;
 
     return input;
-}
-
-void ShowBandAverage()
-{
-    ShowTitle("Average band rating");
-
-    for (int i = 0; i < bandsArray.Length; i++)
-    {
-        if (bands[bandsArray[i]].Rating.Count == 0)
-        {
-            Console.WriteLine($"{i + 1}: {bandsArray[i]} is unrated");
-            continue;
-        }
-
-        string average = String.Format("{0:0.00}", bands[bandsArray[i]].Average);
-
-        Console.WriteLine($"{i + 1}: {bandsArray[i]} has an average of {average}");
-    }
-
-    Console.WriteLine("\nPress any key to return to the menu");
-    Console.ReadKey();
-}
-
-void ShowTitle(string title)
-{
-    string asterisks = string.Empty.PadLeft(title.Length, '*');
-
-    Console.Clear();
-    Console.WriteLine(asterisks);
-    Console.WriteLine(title);
-    Console.WriteLine(asterisks);
-    Console.WriteLine();
 }
 
 Main();
