@@ -1,6 +1,6 @@
 namespace ScreenSound.Models;
 
-internal class Band
+internal class Band : IRateable
 {
     public Band(string name)
     {
