@@ -1,6 +1,6 @@
 namespace ScreenSound.Models;
 
-class Band
+internal class Band
 {
     public Band(string name)
     {
