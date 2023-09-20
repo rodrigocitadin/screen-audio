@@ -24,7 +24,8 @@ void Main()
                 break;
 
             case "2":
-                ShowRegisteredBands();
+                MenuRegisteredBands registered = new();
+                registered.Execute(bands);
                 break;
 
             case "3":
@@ -74,16 +75,6 @@ string CatchInput()
     string input = Console.ReadLine()!;
 
     return input;
-}
-
-void ShowRegisteredBands()
-{
-    ShowTitle("These are the bands you registered");
-
-    ListBands();
-
-    Console.WriteLine("\nPress any key to return to the menu");
-    Console.ReadKey();
 }
 
 void RateBand()
