@@ -2,7 +2,6 @@
 using ScreenSound.Models;
 
 Dictionary<string, Band> bands = new();
-string[] bandsArray;
 
 void Main()
 {
@@ -10,11 +9,11 @@ void Main()
 
     while (loop)
     {
-        bandsArray = bands.Keys.ToArray();
-
         DisplayLogo();
         ShowOptions();
-        string choice = CatchInput();
+
+        Console.Write("Insert: ");
+        string choice = Console.ReadLine()!;
 
         switch (choice)
         {
@@ -69,14 +68,6 @@ Enter 3 to rate a band
 Enter 4 to show the average all bands
 Type anything to close
             ");
-}
-
-string CatchInput()
-{
-    Console.Write("Insert: ");
-    string input = Console.ReadLine()!;
-
-    return input;
 }
 
 Main();
