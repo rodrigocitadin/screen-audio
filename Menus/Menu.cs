@@ -23,7 +23,7 @@ internal class Menu
         return input;
     }
 
-    public void ListBands(Dictionary<string, Band> bands)
+    public string[] ListBands(Dictionary<string, Band> bands)
     {
         string[] bandsArray = bands.Keys.ToArray();
 
@@ -31,5 +31,7 @@ internal class Menu
         {
             Console.WriteLine($"{i + 1}: {bandsArray[i]}");
         }
+
+        return bandsArray;
     }
 }
