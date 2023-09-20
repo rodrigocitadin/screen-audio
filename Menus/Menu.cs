@@ -1,3 +1,5 @@
+using ScreenSound.Models;
+
 namespace ScreenSound.Menus;
 
 internal class Menu
@@ -19,5 +21,15 @@ internal class Menu
         string input = Console.ReadLine()!;
 
         return input;
+    }
+
+    public void ListBands(Dictionary<string, Band> bands)
+    {
+        string[] bandsArray = bands.Keys.ToArray();
+
+        for (int i = 0; i < bandsArray.Length; i++)
+        {
+            Console.WriteLine($"{i + 1}: {bandsArray[i]}");
+        }
     }
 }
