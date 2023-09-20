@@ -11,8 +11,8 @@ internal class Band
 
     public string Name { get; }
     public List<Album> Albums { get; }
-    public List<double> Rating { get; }
-    public double Average => Rating.Average(); 
+    public List<Rating> Rating { get; }
+    public double Average => Rating.Average(r => r.Rate); 
 
     public void AddAlbum(Album album)
     {
@@ -33,7 +33,7 @@ internal class Band
     {
         if (rating >= 0 && rating <= 10)
         {
-            Rating.Add(rating);
+            Rating.Add(new Rating(rating));
 
             return true;
         }
